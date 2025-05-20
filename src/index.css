@@ -38,6 +38,10 @@ h6 {
 ul > li > a{
   color: #425f57;
 }
+ul > li > a:hover{
+  background-color: #88d66c;
+  color: white;
+}
 .active{
   border-bottom: 2px solid #88d66c;
   color: #6ab95e;

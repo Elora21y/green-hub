@@ -1,7 +1,7 @@
 import React from "react";
 import icon from "/favicon.png";
 import { Link, NavLink } from "react-router";
-import { HiMenuAlt1, HiOutlineMenuAlt3 } from "react-icons/hi";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
 const Navbar = () => {
   const links = (
@@ -24,13 +24,12 @@ const Navbar = () => {
     </>
   );
   return (
-    <div>
-      <div className="navbar p-0 bg-base-100 shadow-sm">
+    <div className=" bg-base-100 shadow-sm">
+      <div className=" max-w-7xl mx-auto px-2 sm:px-8 xl:px-0 navbar p-0">
         <div className="navbar-start">
           <img src={icon} alt="" className="w-8 sm:w-10 md:w-12" />
           <h3
-            href="/"
-            className="font-bold text-secondary text-lg sm:text-2xl md:text-3xl"
+            className="font-bold text-secondary text-xl sm:text-2xl md:text-3xl"
           >
             Green<span className="text-primary">Hub</span>
           </h3>
