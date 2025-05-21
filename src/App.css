@@ -1,24 +1,45 @@
-
 .button-green {
   background-color: #88d66c;
   color: white;
+  transition-duration: 0.5s;
 }
 .button-green:hover {
-  background-color: transparent;
+  background-color: white;
   border: 1px solid #88d66c;
   color: #88d66c;
 }
 
-ul > li > a{
+ul > li > a {
   color: #425f57;
 }
-ul > li > a:hover{
+ul > li > a:hover {
   background-color: #88d66c;
   color: white;
 }
-.active{
+.active {
   border-bottom: 2px solid #88d66c;
   color: #6ab95e;
 }
 
-  
+form > input:focus {
+  border: 2px solid #88d66ce8;
+  outline: none;
+  box-shadow: 0 0 0 4px #88d66c5b;
+}
+
+form > input::placeholder {
+  color: #9ca3afa8; 
+  font-size: 12px;
+}
+form > input {
+ width: 100%;
+}
+
+/* footer */
+div>p>a:hover{
+text-decoration: underline;
+}
+
+.social>a:hover{
+  color: #88d66c;
+}

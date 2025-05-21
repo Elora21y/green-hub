@@ -3,6 +3,7 @@ import RootLayout from "../layout/RootLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AuthLayout from "../layout/AuthLayout";
 
 export const router = createBrowserRouter([
     {
@@ -12,14 +13,6 @@ export const router = createBrowserRouter([
             {
                 index : true ,
                 Component : Home
-            },
-            {
-                path : '/login',
-                Component : Login
-            },
-            {
-                path : '/register',
-                Component : Register
             },
             {
                 path:'/explore-gardeners',
@@ -36,6 +29,20 @@ export const router = createBrowserRouter([
             {
                 path : '/my-tips',
                 element : <div>my tips</div>
+            }
+        ]
+    },
+    {
+        path : '/auth',
+        Component : AuthLayout,
+        children : [
+            {
+                path : '/auth/login',
+                Component : Login
+            },
+            {
+                path : '/auth/register',
+                Component : Register
             }
         ]
     }
