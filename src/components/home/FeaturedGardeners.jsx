@@ -1,17 +1,18 @@
 import React from "react";
+import { MdLocationOn, MdTipsAndUpdates } from "react-icons/md";
 import { useLoaderData } from "react-router";
 
 const FeaturedGardeners = () => {
   const gardeners = useLoaderData();
   console.log(gardeners);
   return (
-    <div className="py-10 bg-green-50 my-12 px-6 lg:px-10 text-gray-600">
+    <div className="py-10 bg-green-50 my-12 px-6 lg:px-10 text-accent">
      
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl font-bold text-secondary">
              Featured Gardeners
           </h2>
-          <p className=" mt-2 max-w-xl mx-auto">
+          <p className=" mt-2 max-w-2xl mx-auto">
             Meet our top active gardeners who are inspiring communities with
             their green thumb.
           </p>
@@ -31,12 +32,12 @@ const FeaturedGardeners = () => {
               <h3 className="text-xl font-semibold text-green-800">
                 {gardener.name}
               </h3>
-              <p >{gardener.location}</p>
+              <p className="flex gap-1 items-center justify-center"><MdLocationOn className=" text-red-700" />{gardener.location}</p>
               <p className="mt-2 ">
                 {gardener.experience}
               </p>
               <p className="mt-1 font-medium ">
-                 Tips Shared: {gardener.totalTips}
+                <MdTipsAndUpdates className="inline text-yellow-500"/> Tips Shared: {gardener.totalTips}
               </p>
             </div>
           ))}

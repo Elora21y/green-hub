@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layout/AuthLayout";
+import ExploreGardeners from "../pages/ExploreGardeners";
 
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/explore-gardeners',
-                element : <div>explore</div>
+                Component : ExploreGardeners,
+                loader : () => fetch('http://localhost:2100/gardeners')
             },
             {
                 path : '/browser-tips',
