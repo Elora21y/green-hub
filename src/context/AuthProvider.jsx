@@ -14,29 +14,38 @@ import { Toaster } from "react-hot-toast";
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const provider = new GoogleAuthProvider();
+  const [loading , setLoading] = useState(true)
 
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const loginUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
+  const unSubscribe =  onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+    setLoading(false)
       } else {
         setUser(null);
       }
     });
+    return () => {
+      unSubscribe()
+    }
   }, []);
   // console.log(user);
   const googleLogin = () => {
+    setLoading(true)
    return signInWithPopup(auth, provider)
       
   };
   const logOut = () => {
+    setLoading(true)
     return signOut(auth);
   };
   const userInfo = {
@@ -46,6 +55,7 @@ const AuthProvider = ({ children }) => {
     user,
     setUser,
     googleLogin,
+    loading
   };
   return (
     <div>

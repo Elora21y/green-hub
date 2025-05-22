@@ -5,6 +5,9 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AuthLayout from "../layout/AuthLayout";
 import ExploreGardeners from "../pages/ExploreGardeners";
+import ShareTips from "../pages/ShareTips";
+import BrowserTips from "../pages/BrowserTips";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -23,15 +26,15 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/browser-tips',
-                element : <div>browser</div>
+                Component : BrowserTips
             },
             {
                 path : '/share-garden',
-                element : <div>Share</div>
+                element : <PrivateRoute><ShareTips/></PrivateRoute>
             },
             {
                 path : '/my-tips',
-                element : <div>my tips</div>
+                element : <PrivateRoute><div>my tips</div></PrivateRoute>
             }
         ]
     },
