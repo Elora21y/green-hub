@@ -33,7 +33,7 @@ const slideImages = [
 ];
 const Banner = () => {
   return (
-    <div className="slide-container rounded-2xl shadow shadow-primary/80 overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+    <div className="slide-container rounded-2xl shadow shadow-primary/50 overflow-hidden transition-shadow duration-500 hover:shadow-lg">
       <Slide
         arrows={true}
         duration={5000}

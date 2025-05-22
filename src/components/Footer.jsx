@@ -40,7 +40,9 @@ const Footer = () => {
               <a href="#">Cookies</a>
             </p>
           </div>
-          <div className="flex gap-3 pt-2 social">
+         <div>
+          <h2 className="text-xl font-bold mb-2">Social</h2>
+           <div className="flex gap-3 pt-2 social">
             <a href="https://www.facebook.com/elora.yasmin.21" target="_blank">
               <FaFacebook size={20} />
             </a>
@@ -54,6 +56,7 @@ const Footer = () => {
               <IoLogoYoutube size={20} />
             </a>
           </div>
+         </div>
           
           <p className="text-sm pt-3">
             © {new Date().getFullYear()} All rights reserved by Green Hub
