@@ -8,6 +8,7 @@ import ExploreGardeners from "../pages/ExploreGardeners";
 import ShareTips from "../pages/ShareTips";
 import BrowserTips from "../pages/BrowserTips";
 import PrivateRoute from "./PrivateRoute";
+import TipDetails from "../pages/TipDetails";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +27,13 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/browser-tips',
-                Component : BrowserTips
+                Component : BrowserTips,
+                loader : () => fetch('http://localhost:2100/share-tips')
+            },
+            {
+                path : '/tip-details/:id',
+                element : <PrivateRoute><TipDetails/> </PrivateRoute>,
+                loader : ({params}) => fetch(`http://localhost:2100/share-tips/${params.id}`)
             },
             {
                 path : '/share-garden',
