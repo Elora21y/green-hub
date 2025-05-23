@@ -9,6 +9,8 @@ import ShareTips from "../pages/ShareTips";
 import BrowserTips from "../pages/BrowserTips";
 import PrivateRoute from "./PrivateRoute";
 import TipDetails from "../pages/TipDetails";
+import MyTips from "../pages/MyTips";
+import UpdateTips from "../pages/UpdateTips";
 
 export const router = createBrowserRouter([
     {
@@ -28,12 +30,12 @@ export const router = createBrowserRouter([
             {
                 path : '/browser-tips',
                 Component : BrowserTips,
-                loader : () => fetch('http://localhost:2100/share-tips')
+                loader : () => fetch('http://localhost:2100/share-tips/public')
             },
             {
                 path : '/tip-details/:id',
                 element : <PrivateRoute><TipDetails/> </PrivateRoute>,
-                loader : ({params}) => fetch(`http://localhost:2100/share-tips/${params.id}`)
+                loader : ({params}) => fetch(`http://localhost:2100/share-tips/public/${params.id}`)
             },
             {
                 path : '/share-garden',
@@ -41,7 +43,13 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/my-tips',
-                element : <PrivateRoute><div>my tips</div></PrivateRoute>
+                element : <PrivateRoute><MyTips/></PrivateRoute>,
+                // loader : () => fetch('http://localhost:2100/share-tips')
+            },
+            {
+                path : '/update/tips/:id',
+                element : <PrivateRoute><UpdateTips/></PrivateRoute>,
+                loader : ({params}) => fetch(`http://localhost:2100/share-tips/${params.id}`)
             }
         ]
     },

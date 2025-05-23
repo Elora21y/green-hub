@@ -3,13 +3,14 @@ import icon from "/favicon.png";
 import { Link, NavLink } from "react-router";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AuthContext } from "../context/AuthContext";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
 
   const handleLogout = () => {
     logOut()
-      .then(() => console.log("user log out"))
+      .then(() => toast.success("Successfully log out"))
       .catch((error) => console.log(error));
   };
   const links = (
@@ -26,7 +27,7 @@ const Navbar = () => {
       {user && (
         <>
           <li>
-            <NavLink to="/share-garden">Share a Garden</NavLink>
+            <NavLink to="/share-garden">Share a Garden Tips</NavLink>
           </li>
           <li>
             <NavLink to="/my-tips">My Tips</NavLink>
