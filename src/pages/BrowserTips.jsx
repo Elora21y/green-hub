@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router";
 
 const BrowserTips = () => {
   const tips = useLoaderData();
-  console.log(tips);
+  // console.log(tips);
   return (
     <div>
       <div className="overflow-x-auto overflow-y-hidden text-accent">

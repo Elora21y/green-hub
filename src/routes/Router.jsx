@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
                 // loader : () => fetch('http://localhost:2100/share-tips')
             },
             {
-                path : '/update/tips/:id',
+                path : '/update-tips/:id',
                 element : <PrivateRoute><UpdateTips/></PrivateRoute>,
                 loader : ({params}) => fetch(`http://localhost:2100/share-tips/${params.id}`)
             }

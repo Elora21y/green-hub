@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
   return (
     <div>
       <AuthContext value={userInfo}>{children}</AuthContext>
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} toastOptions={{ style : {zIndex : 9999} }}/>
     </div>
   );
 };

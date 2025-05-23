@@ -45,7 +45,7 @@ const Banner = () => {
           </button>
         }
         nextArrow={
-          <button className="btn btn-circle btn-xs md:btn-sm bg-[#4C585B50] text-white mr-1">
+          <button className="btn btn-circle btn-xs md:btn-sm bg-[#4C585B50] text-white mr-1 ">
             ❯
           </button>
         }
