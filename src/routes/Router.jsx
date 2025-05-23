@@ -11,11 +11,14 @@ import PrivateRoute from "./PrivateRoute";
 import TipDetails from "../pages/TipDetails";
 import MyTips from "../pages/MyTips";
 import UpdateTips from "../pages/UpdateTips";
+import Loading from "../components/Loading";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
     {
         path : '/' ,
         Component : RootLayout,
+        hydrateFallbackElement : <Loading/>,
         children : [
             {
                 index : true ,
@@ -56,6 +59,7 @@ export const router = createBrowserRouter([
     {
         path : '/auth',
         Component : AuthLayout,
+        hydrateFallbackElement : <Loading/>,
         children : [
             {
                 path : '/auth/login',
@@ -66,5 +70,9 @@ export const router = createBrowserRouter([
                 Component : Register
             }
         ]
+    },
+    {
+        path : '/*',
+        Component : Error
     }
 ])

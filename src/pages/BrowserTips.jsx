@@ -1,5 +1,4 @@
 import React from "react";
-import { FaRegEye } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router";
 
 const BrowserTips = () => {
@@ -14,9 +13,10 @@ const BrowserTips = () => {
             <thead className="bg-primary/30 text-secondary">
               <tr>
                 <th>No.</th>
+                <th>Image</th>
                 <th>Title</th>
                 <th>Category</th>
-                <th>See Details</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -26,28 +26,26 @@ const BrowserTips = () => {
                     <label>{index + 1}</label>
                   </th>
                   <td>
-                    <div className="flex items-center gap-3">
-                      <div className="avatar">
+                        <div className="avatar">
                         <div className="mask mask-squircle h-12 w-12">
                           <img src={tip.photo} alt="profile" />
                         </div>
                       </div>
-                      <div>
+                  </td>
+                  <td>
                         <h3 className="font-medium text-secondary">
                           {tip.title}
                         </h3>
-                      </div>
-                    </div>
                   </td>
                   <td>{tip.category}</td>
-                  <th>
+                  <td>
                     <Link
                       to={`/tip-details/${tip._id}`}
-                      className="btn btn-ghost btn-sm"
+                      className="btn btn-ghost button-green btn-sm py-5 md:py-4"
                     >
-                      <FaRegEye />
+                      see more
                     </Link>
-                  </th>
+                  </td>
                 </tr>
               ))}
             </tbody>

@@ -95,7 +95,7 @@ const MyTips = () => {
 
                     <button
                       onClick={() => handleDelete(tip._id)}
-                      className="text-red-600 btn btn-xs border-primary/30 hover:bg-red-500 hover:text-white"
+                      className="text-red-600 btn btn-xs border-primary/30 hover:bg-red-500 hover:text-white "
                     >
                       <RiDeleteBin6Line size={15} />
                     </button>
