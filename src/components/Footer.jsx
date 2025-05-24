@@ -72,17 +72,17 @@ const Footer = () => {
             <div className="space-y-2">
               <input
                 type="text"
-                className="input focus:outline-0 focus:border-0 text-secondary"
+                className="input focus:outline-0 focus:border-0 text-secondary bg-white"
                 placeholder="Your Name"
               />
               <br />
               <input
                 type="email"
-                className="input focus:outline-0 focus:border-0 text-secondary"
+                className="input focus:outline-0 focus:border-0 text-secondary bg-white"
                 placeholder="Email"
               />
               <textarea
-                className="textarea  focus:outline-0 focus:border-0 text-secondary block"
+                className="textarea  focus:outline-0 focus:border-0 text-secondary block bg-white"
                 placeholder="Message"
               ></textarea>
               <button type="button" className="btn bg-primary text-white hover:bg-[#70d66c] border-0">

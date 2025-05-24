@@ -1,17 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default
+  themes: light --default , dark --prefersdark
 }
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
   --color-primary: #88d66c;
   --color-secondary: #425f57;
+  --color-secondary-content: #425f57;
+  --color-accent-content: #5e686d;
   --color-accent: #5e686d;
+  --bg-base-200 : #FAF6E9
 }
-
+@plugin 'daisyui/theme'{
+     name: "dark";
+  default: true;
+ --color-primary: #88d66c;
+  --color-secondary: #FFFDF6;
+   --color-secondary-content: #425f57;
+ --color-accent: #5e686d; 
+ --color-accent-content: #FFFDF6; 
+ --color-bg-base-200 : #FAF6E9
+  }
 
 * {
   font-family: "Nunito", sans-serif;
@@ -23,4 +38,7 @@ h4,
 h5,
 h6 {
   font-family: "Inter", sans-serif;
+}
+* {
+  transition: background-color 0.2s ease, color 0.2s ease;
 }

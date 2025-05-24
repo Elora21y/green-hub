@@ -53,7 +53,7 @@ const MyTips = () => {
     });
   };
   return (
-    <div className="overflow-x-auto overflow-y-hidden text-accent text-xs lg:text-base">
+    <div className="overflow-x-auto overflow-y-hidden text-accent-content text-xs lg:text-base">
       
         <h2 className="text-3xl lg:text-5xl font-bold text-secondary text-center mb-5">
           My Tip Collection
@@ -61,7 +61,7 @@ const MyTips = () => {
       {tips.length > 0 ? (
         <table className="table">
           {/* head */}
-          <thead className="bg-[#cdf7bd] text-secondary">
+          <thead className=" bg-primary/30 text-secondary">
             <tr>
               <th>Image</th>
               <th>Title</th>

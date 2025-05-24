@@ -52,7 +52,7 @@ const UpdateTips = () => {
       });
   };
   return (
-    <div className="text-accent">
+    <div className="text-accent-content">
       <Link to='/my-tips' className="text-primary ">
       <FaCircleArrowLeft size={25}/>
       </Link>
@@ -72,7 +72,7 @@ const UpdateTips = () => {
           <input
             type="text"
             placeholder="Title (e.g. How I Grow Tomatoes Indoors)"
-            className=" input input-bordered"
+            className=" input input-bordered w-full"
             name="title"
             defaultValue={title}
           />
@@ -80,13 +80,13 @@ const UpdateTips = () => {
           <input
             type="text"
             placeholder="Plant Type / Topic"
-            className=" input input-bordered"
+            className=" input input-bordered w-full"
             name="plant"
             defaultValue={plant}
           />
           {/* level */}
           <select
-            className="w-full select select-bordered "
+            className="w-full select select-bordered text-accent-content"
             name="level"
             defaultValue={level}
           >
@@ -115,7 +115,7 @@ const UpdateTips = () => {
           />
           {/* category */}
           <select
-            className="w-full select select-bordered"
+            className="w-full select select-bordered text-accent-content"
             name="category"
             defaultValue={category}
           >
@@ -129,7 +129,7 @@ const UpdateTips = () => {
           </select>
           {/* availability */}
           <select
-            className="w-full select select-bordered"
+            className="w-full select select-bordered text-accent-content"
             name="availability"
             defaultValue={availability}
           >
@@ -140,7 +140,7 @@ const UpdateTips = () => {
             <option>Hidden</option>
           </select>
 
-          <div className="grid grid-cols-1  md:grid-cols-2 gap-4 text-accent">
+          <div className="grid grid-cols-1  md:grid-cols-2 gap-4 ">
             <input
               type="text"
               readOnly

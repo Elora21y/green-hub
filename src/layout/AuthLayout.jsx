@@ -2,12 +2,13 @@ import React from "react";
 import { Outlet, useNavigation } from "react-router";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 const AuthLayout = () => {
    const navigation = useNavigation()
     const isNavigation = Boolean(navigation.location)
   return (
-    <div className=" bg-base-200/80">
+    <div className=" bg-white">
       <header className="sticky backdrop-blur-lg top-0 z-10">
         <Navbar />
       </header>

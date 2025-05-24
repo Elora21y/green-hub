@@ -9,7 +9,7 @@ const RootLayout = () => {
     const isNavigation = Boolean(navigation.location)
     return (
         <div className='bg-base-100 min-h-screen'>
-            <header className='sticky backdrop-blur-lg top-0 z-10'>
+            <header className='sticky backdrop-blur-3xl top-0 z-10'>
                 <Navbar/>
             </header>
             {

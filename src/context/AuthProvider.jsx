@@ -15,6 +15,18 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const provider = new GoogleAuthProvider();
   const [loading , setLoading] = useState(true)
+  const [theme, setTheme] = useState(
+      localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light'
+    );
+
+    const handleToggle = (e) => {
+      setTheme(e.target.checked ? 'dark' : 'light');
+    };
+
+    useEffect(() => {
+      localStorage.setItem('theme', theme);
+      document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
 
   const createUser = (email, password) => {
     setLoading(true)
@@ -27,12 +39,10 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
   const unSubscribe =  onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
+      
         setUser(currentUser);
     setLoading(false)
-      } else {
-        setUser(null);
-      }
+      
     });
     return () => {
       unSubscribe()
@@ -55,11 +65,13 @@ const AuthProvider = ({ children }) => {
     user,
     setUser,
     googleLogin,
-    loading
+    loading,
+    handleToggle,
+    theme
   };
   return (
     <div>
-      <AuthContext value={userInfo}>{children}</AuthContext>
+      <AuthContext.Provider value={userInfo}>{children}</AuthContext.Provider>
       <Toaster position="top-center" reverseOrder={false} toastOptions={{ style : {zIndex : 9999} }}/>
     </div>
   );

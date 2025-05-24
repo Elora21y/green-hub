@@ -15,8 +15,8 @@ ul > li > a:hover {
   background-color: #88d66c;
   color: white;
 }
-.active {
-  border-bottom: 2px solid #88d66c;
+ul > li > a.active {
+  border: 2px solid #88d66c;
   color: #6ab95e;
 }
 
@@ -35,13 +35,11 @@ form > input::placeholder {
   color: #9ca3afa8;
   font-size: 12px;
 }
-form > select  {
+form > select {
   color: rgb(109, 108, 108);
   font-size: 12px;
 }
-form > input {
-  width: 100%;
-}
+
 
 /* footer */
 div > p > a:hover {

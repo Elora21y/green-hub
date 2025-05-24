@@ -1,6 +1,6 @@
 import React, { use, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 
@@ -8,19 +8,21 @@ const Login = () => {
   const { loginUser, googleLogin } = use(AuthContext);
   const [showPass , setShowPass] = useState(false)
   const navigate = useNavigate();
+  const location = useLocation()
+  // console.log(location.state)
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     loginUser(email, password)
       .then((result) => {
         console.log(result.user);
         toast.success('Successfully Login')
-        navigate("/");
+        navigate(`${location.state ?  location.state : '/'}`);
       })
       .catch((error) => {
          if (error.code == "auth/invalid-credential")
@@ -36,47 +38,46 @@ const Login = () => {
   const handleGoogleLogin = () =>{
       googleLogin().then(() => {
               toast.success('Successfully Login')
+              navigate(`${location.state ?  location.state : '/'}`);
             })
             .catch((error) => {
               toast.error(error)
             });
     }
   return (
-    <div className="flex justify-center items-center lg:absolute lg:top-0 lg:right-0 lg:w-11/12 pt-10 md:pt-15 lg:mt-5 ">
+    <div className="flex justify-center items-center lg:absolute lg:top-0 lg:right-0 lg:w-11/12 pt-10 md:pt-15 lg:mt-5">
       {/* side text */}
       <div>
-        <h2 className="text-center text-4xl lg:text-5xl font-bold text-secondary mb-5">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold text-secondary-content mb-5">
           Please Login
         </h2>
         <div className="card bg-primary/40 shrink-0 shadow shadow-primary hover:shadow-lg duration-500 transition-shadow">
-          <div className="card-body text-secondary w-[300px] sm:w-96 md:w-[400px]">
+          <div className="card-body text-secondary-content w-[300px] sm:w-96 md:w-[400px]">
             {/* form */}
             <form onSubmit={handleLogin} className="fieldset">
               {/* email */}
               <label className="label">Email</label>
               <input
                 type="email"
-                className="input"
+                className="input bg-white"
                 placeholder="Email"
                 name="email"
               />
               {/* password */}
-              <div >
+              <div className="relative">
                 <label htmlFor="password" className="block">
                   Password
                 </label>
-
-                <div className="relative">
                   <input
                     type={`${showPass ? "text" : "password"}`}
                     name="password"
                     placeholder="Password"
-                className="input w-full  border-2 border-gray-300 focus:border-[#88d66ce8] focus:outline-none focus:ring-4 focus:ring-[#88d66c5b]"
+                className="input  border-2 border-primary-300 focus:border-[#88d66ce8] focus:outline-none focus:ring-4 focus:ring-[#88d66c5b] bg-white placeholder:text-gray-300 placeholder:text-xs"
                   />
                   <button
                     onClick={() => setShowPass(!showPass)}
                     type="button"
-                    className="absolute btn btn-xs btn-ghost z-10 right-3 top-2 "
+                    className="absolute text-gray-400 btn btn-xs btn-ghost z-10 right-7 top-6 hover:bg-white"
                   >
                     {showPass ? (
                       <FaRegEyeSlash size={15} />
@@ -84,7 +85,6 @@ const Login = () => {
                       <FaRegEye size={15} />
                     )}
                   </button>
-                </div>
               </div>
               <div>
                 <a className="link link-hover">Forgot password?</a>
@@ -100,7 +100,7 @@ const Login = () => {
             {/* Google */}
             <button
               onClick={handleGoogleLogin}
-              className="btn bg-white text-secondary mb-2 border-[#e5e5e5]"
+              className="btn bg-white text-secondary-content mb-2 border-[#e5e5e5]"
             >
               <svg
                 aria-label="Google logo"
@@ -135,6 +135,7 @@ const Login = () => {
               Don't have an account? Please
               <Link
                 to="/auth/register"
+                state={location.state || "/"}
                 className="underline font-semibold text-base"
               >
                 {" "}

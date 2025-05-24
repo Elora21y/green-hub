@@ -22,8 +22,9 @@ const BrowserTips = () => {
   };
   return (
     <div>
+      
       {/* sort */}
-      <div className="flex flex-col justify-center items-end mr-2 mb-10">
+      <div className="flex flex-col justify-center items-end mr-2 mb-10 text-accent-content">
         <div className="dropdown ">
           <div
             tabIndex={0}
@@ -52,7 +53,7 @@ const BrowserTips = () => {
         </div>
       </div>
 
-      <div className="overflow-x-auto overflow-y-hidden text-accent">
+      <div className="overflow-x-auto overflow-y-hidden ">
         {tips.length > 0 ? (
           <table className="table">
             {/* head */}

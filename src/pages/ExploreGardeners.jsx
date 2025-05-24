@@ -7,12 +7,12 @@ const ExploreGardeners = () => {
   const gardeners = useLoaderData();
   
   return (
-    <div className="text-accent text-sm">
+    <div className="text-accent-content text-sm">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-5xl font-bold text-secondary">
               Explore Gardeners
           </h2>
-          <p className=" mt-2 max-w-2xl mx-auto text-base">
+          <p className=" mt-2 max-w-2xl mx-auto text-base ">
           Explore the talented gardeners from across Bangladesh who are growing green dreams in balconies, rooftops, and backyards. Learn from their expertise and discover your inspiration!
           </p>
         </div>
@@ -20,7 +20,7 @@ const ExploreGardeners = () => {
       {gardeners.map((gardener) => (
         <div
           key={gardener._id}
-          className="rounded-2xl shadow-primary/40 hover:shadow-lg transition-all duration-500 hover:scale-102 border border-primary/40 hover:border-primary p-4 bg-white "
+          className="rounded-2xl shadow-primary/40 hover:shadow-lg transition-all duration-500 hover:scale-102 border border-primary/40 hover:border-primary p-4 bg-base-100 "
         >
           <div className="px-5 ">
             <img

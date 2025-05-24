@@ -16,7 +16,7 @@ const TipDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="max-w-2xl mx-auto px-3 md:px-5 text-accent">
+    <div className="max-w-2xl mx-auto px-3 md:px-5 text-accent-content">
       <Link to="/browser-tips">
         <FaCircleArrowLeft size={25} className="text-primary mb-5" />
       </Link>

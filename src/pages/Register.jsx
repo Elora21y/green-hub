@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import { updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
@@ -9,6 +9,8 @@ const Register = () => {
   const { createUser, googleLogin } = use(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -40,7 +42,7 @@ const Register = () => {
         })
           .then(() => {
             console.log("Profile update");
-            navigate("/");
+            navigate(`${location.state ? location.state : "/"}`);
             toast.success("Successfully Sing Up");
           })
           .catch((error) => console.log(error));
@@ -48,32 +50,33 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
-
-    };
-    const handleGoogleLogin = () =>{
-      googleLogin().then(() => {
-              toast.success('Successfully Login')
-            })
-            .catch((error) => {
-              console.og(error);
-            });
-    }
+  };
+  const handleGoogleLogin = () => {
+    googleLogin()
+      .then(() => {
+        toast.success("Successfully Login");
+        navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.og(error);
+      });
+  };
   return (
     <div className="flex justify-center items-center lg:absolute lg:top-0 lg:right-0 lg:w-11/12 pt-10 md:pt-14  ">
       {/* side text */}
       <div>
-        <h2 className="text-center text-4xl lg:text-5xl font-bold text-secondary mb-5">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold text-secondary-content mb-5">
           Please Sign Up
         </h2>
         <div className="card bg-primary/40 shrink-0 shadow shadow-primary hover:shadow-lg duration-500 transition-shadow">
-          <div className="card-body text-secondary w-[300px] sm:w-96 md:w-[400px]">
+          <div className="card-body text-secondary-content w-[300px] sm:w-96 md:w-[400px]">
             {/* form */}
             <form onSubmit={handleRegister} className="fieldset">
               {/* name */}
               <label className="label">User Name</label>
               <input
                 type="text"
-                className="input"
+                className="input bg-white"
                 placeholder="Your Name"
                 name="name"
               />
@@ -81,7 +84,7 @@ const Register = () => {
               <label className="label">Photo URL</label>
               <input
                 type="text"
-                className="input"
+                className="input bg-white"
                 placeholder="URL"
                 name="photo"
               />
@@ -89,42 +92,45 @@ const Register = () => {
               <label className="label">Email</label>
               <input
                 type="email"
-                className="input"
+                className="input bg-white"
                 placeholder="Email"
                 name="email"
               />
               {/* password */}
-              <div>
+              <div className="relative">
                 <label htmlFor="password" className="block">
                   Password
                 </label>
-
-                <div className="relative">
-                  <input
-                    type={`${showPass ? "text" : "password"}`}
-                    name="password"
-                    placeholder="Password"
-                    className="input w-full  border-2 border-gray-300 focus:border-[#88d66ce8] focus:outline-none focus:ring-4 focus:ring-[#88d66c5b]"
-                  />
-                  <button
-                    onClick={() => setShowPass(!showPass)}
-                    type="button"
-                    className="absolute btn btn-xs btn-ghost z-10 right-3 top-2 "
-                  >
-                    {showPass ? (
-                      <FaRegEyeSlash size={15} />
-                    ) : (
-                      <FaRegEye size={15} />
-                    )}
-                  </button>
-                </div>
+                <input
+                  type={`${showPass ? "text" : "password"}`}
+                  name="password"
+                  placeholder="Password"
+                  className="input  border-2 border-primary-300 focus:border-[#88d66ce8] focus:outline-none focus:ring-4 focus:ring-[#88d66c5b] bg-white placeholder:text-gray-300 placeholder:text-xs"
+                />
+                <button
+                  onClick={() => setShowPass(!showPass)}
+                  type="button"
+                  className="absolute text-gray-400 btn btn-xs btn-ghost z-10 right-7 top-6 hover:bg-white"
+                >
+                  {showPass ? (
+                    <FaRegEyeSlash size={15} />
+                  ) : (
+                    <FaRegEye size={15} />
+                  )}
+                </button>
               </div>
               {/* check */}
               <label className="label">
-                <input name="terms" type="checkbox" className="checkbox text-secondary/60" />I
-                accept the Terms of Service
+                <input
+                  name="terms"
+                  type="checkbox"
+                  className="checkbox text-secondary/60"
+                />
+                I accept the Terms of Service
               </label>
-              <button className="btn button-green " type="submit">Register</button>
+              <button className="btn button-green " type="submit">
+                Register
+              </button>
             </form>
 
             {/* social login */}
@@ -136,7 +142,7 @@ const Register = () => {
             {/* Google */}
             <button
               onClick={handleGoogleLogin}
-              className="btn bg-white text-secondary mb-2 border-[#e5e5e5]"
+              className="btn bg-white text-secondary-content mb-2 border-[#e5e5e5]"
             >
               <svg
                 aria-label="Google logo"
