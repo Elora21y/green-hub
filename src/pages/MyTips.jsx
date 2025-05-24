@@ -31,14 +31,14 @@ const MyTips = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
-      console.log(result.isConfirmed);
+      // console.log(result.isConfirmed);
       if (result.isConfirmed) {
         fetch(`http://localhost:2100/share-tips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount) {
               Swal.fire({
                 title: "Deleted!",

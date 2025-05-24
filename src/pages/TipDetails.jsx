@@ -1,8 +1,11 @@
-import React from "react";
+
+import React, { useState } from "react";
+import toast from "react-hot-toast";
 import { FaCircleArrowLeft, FaHeart } from "react-icons/fa6";
 import { Link, useLoaderData } from "react-router";
 
 const TipDetails = () => {
+ 
   const {
     title,
     plant,
@@ -13,7 +16,31 @@ const TipDetails = () => {
     availability,
     name,
     email,
-  } = useLoaderData();
+    _id,
+    totalLiked
+  } = useLoaderData()
+   const [like , setLike] = useState(totalLiked || 0)
+
+  const handleCountLike = (id) =>{
+     fetch(`http://localhost:2100/share-tips/${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({}),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+        if (data.modifiedCount) {
+          toast.success("Liked");
+          setLike((prev) => prev + 1)
+        }
+        else{
+          toast.error('something wrong, try later')
+        }
+      });
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-3 md:px-5 text-accent-content">
@@ -61,9 +88,13 @@ const TipDetails = () => {
           <p className="text-base leading-relaxed ">{description}</p>
 
           {/* Like Button (placeholder for now) */}
-          <button className="btn btn-ghost bg-transparent">
-            <FaHeart size={20} className="text-red-600" /> Like{" "}
+         <div className="flex items-center justify-center ">
+           <button onClick={() => handleCountLike(_id)}
+           className="btn btn-sm btn-ghost bg-transparent">
+            <FaHeart size={20} className="text-red-600" /> 
           </button>
+          <p className="flex gap-1">{like>0 && like} <span>{like > 1 ? 'Likes' : 'Like'}</span></p>
+         </div>
         </div>
       </div>
     </div>

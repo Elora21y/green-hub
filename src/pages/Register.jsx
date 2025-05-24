@@ -41,14 +41,14 @@ const Register = () => {
           photoURL: restFormData.photo,
         })
           .then(() => {
-            console.log("Profile update");
+            // console.log("Profile update");
             navigate(`${location.state ? location.state : "/"}`);
             toast.success("Successfully Sing Up");
           })
-          .catch((error) => console.log(error));
+          .catch((error) => toast.error(error));
       })
       .catch((error) => {
-        console.log(error);
+        toast.error(error.code);
       });
   };
   const handleGoogleLogin = () => {

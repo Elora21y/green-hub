@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleLogout = () => {
     logOut()
       .then(() => toast.success("Successfully log out"))
-      .catch((error) => console.log(error));
+      .catch((error) => toast.error(error));
   };
   const links = (
     <>
@@ -19,10 +19,10 @@ const Navbar = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/explore-gardeners">Explore Gardeners</NavLink>
+        <NavLink to="/browser-tips">Browse Tips</NavLink>
       </li>
       <li>
-        <NavLink to="/browser-tips">Browse Tips</NavLink>
+        <NavLink to="/explore-gardeners">Explore Gardeners</NavLink>
       </li>
       {user && (
         <>

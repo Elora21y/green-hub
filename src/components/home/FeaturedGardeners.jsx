@@ -6,10 +6,10 @@ const FeaturedGardeners = () => {
   const gardeners = useLoaderData();
   // console.log(gardeners);
   return (
-    <div className="py-10 bg-green-50 my-12 px-6 lg:px-10 text-accent rounded-xl">
+    <div className="py-10 bg-green-50 my-16 px-6 lg:px-10 text-accent rounded-xl">
      
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-secondary-content">
+          <h2 className="text-3xl lg:text-4xl font-bold text-secondary-content">
              Featured Gardeners
           </h2>
           <p className=" mt-2 max-w-2xl mx-auto">

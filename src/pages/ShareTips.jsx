@@ -56,7 +56,7 @@ const ShareTips = () => {
           experience can help others bloom.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto p-8 bg-[#80b96ce5] rounded-2xl mt-8 shadow-primary/40 hover:shadow-lg transition-all duration-500">
+      <div className="max-w-2xl mx-auto p-8 bg-[#a6e291cc] rounded-2xl mt-8 shadow-primary/40 hover:shadow-lg transition-all duration-500">
         <form className="space-y-4" onSubmit={handleShareSubmit}>
           {/* title */}
           <input
