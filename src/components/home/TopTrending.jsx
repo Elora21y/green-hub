@@ -30,13 +30,20 @@ const TopTrending = () => {
         <div className="flex justify-between items-start gap-1">
             <div>
             <h3 className="text-lg md:text-xl font-semibold text-secondary mb-1">{tip.title}</h3>
-        <p className="text-sm text-gray-400 ">By {tip.name}</p>
+        <p className="text-sm text-gray-400 mb-2">By {tip.name}</p>
         </div>
         <div className="flex items-center gap-1 text-sm justify-center">
             <FaHeart  className="text-red-600" /> 
            <p className="flex gap-1 text-xs">{tip.totalLiked>0 && tip.totalLiked} <span>{tip.totalLiked > 1 ? 'Likes' : 'Like'}</span></p>
         </div>
+        
         </div>
+        <Link
+            to={`/tip-details/${tip._id}`}
+            className="text-primary hover:underline font-medium "
+          >
+            View Details →
+          </Link>
       </div>
     ))}
   </div>

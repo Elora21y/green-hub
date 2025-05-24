@@ -3,6 +3,7 @@ import Banner from '../components/home/Banner';
 import FeaturedGardeners from '../components/home/FeaturedGardeners';
 import FAQ from '../components/home/FAQ';
 import TopTrending from '../components/home/TopTrending';
+import TopContributors from '../components/home/TopContributors';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <FeaturedGardeners/>
             <TopTrending/>
             <FAQ/>
+            <TopContributors/>
         </div>
     );
 };
