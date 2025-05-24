@@ -1,6 +1,7 @@
 import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import { Typewriter } from "react-simple-typewriter";
 
 const slideImages = [
   {
@@ -60,7 +61,15 @@ const Banner = () => {
           >
             <div className=" px-6 sm:px-10 md:px-16 lg:px-24 space-y-2 lg:space-y-4 text-white">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold drop-shadow-2xl">
-                {slideImage.caption}
+                 <Typewriter
+                  words={[slideImage.caption]}
+                  loop={5}
+                  cursor
+                  cursorStyle="_"
+                  typeSpeed={70}
+                  deleteSpeed={50}
+                  delaySpeed={1500}
+                />
               </h2>
               <p className="text-sm sm:text-base md:text-lg max-w-2xl font-medium">
                 {slideImage.description}

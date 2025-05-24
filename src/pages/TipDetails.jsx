@@ -22,7 +22,7 @@ const TipDetails = () => {
    const [like , setLike] = useState(totalLiked || 0)
 
   const handleCountLike = (id) =>{
-     fetch(`http://localhost:2100/share-tips/${id}`, {
+     fetch(`https://green-hub-server.vercel.app/share-tips/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

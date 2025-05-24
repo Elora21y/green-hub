@@ -11,7 +11,7 @@ const MyTips = () => {
   const [tips, setTips] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:2100/share-tips")
+    fetch("https://green-hub-server.vercel.app/share-tips")
       .then((res) => res.json())
       .then((data) => {
         const myTips = data.filter((tip) => tip.email === user.email);
@@ -33,7 +33,7 @@ const MyTips = () => {
     }).then((result) => {
       // console.log(result.isConfirmed);
       if (result.isConfirmed) {
-        fetch(`http://localhost:2100/share-tips/${id}`, {
+        fetch(`https://green-hub-server.vercel.app/share-tips/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

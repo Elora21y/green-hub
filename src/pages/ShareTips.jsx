@@ -29,7 +29,7 @@ const ShareTips = () => {
       ...information,
     };
 
-    fetch("http://localhost:2100/share-tips", {
+    fetch("https://green-hub-server.vercel.app/share-tips", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 const TopTrending = () => {
     const [topTips , setTopTips] = useState([])
     useEffect(() =>{
-        fetch('http://localhost:2100/share-tips/top-trending')
+        fetch('https://green-hub-server.vercel.app/share-tips/top-trending')
         .then(res => res.json())
         .then(data => setTopTips(data))
     })

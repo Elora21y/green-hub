@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 
 const Navbar = () => {
   const { user, logOut, handleToggle, theme } = use(AuthContext);
@@ -56,15 +57,20 @@ const Navbar = () => {
               <div className="dropdown">
                 <div tabIndex={0}>
                   <img
-                    src={`${
-                      user.photoURL
-                        ? user.photoURL
-                        : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-                    }`}
-                    alt="Profile Pic"
-                    className="w-12 h-12 rounded-full object-cover cursor-pointer"
-                    title={`Hi! ${user.displayName}`}
-                  />
+        src={
+          user?.photoURL
+            ? user.photoURL
+            : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+        }
+        alt="Profile Pic"
+        className="w-12 h-12 rounded-full object-cover cursor-pointer"
+        data-tooltip-id="user-tooltip"
+        data-tooltip-content={`Hi! ${user?.displayName || "Guest"}`}
+        data-tooltip-place="bottom"
+      />
+      <ReactTooltip id="user-tooltip" 
+      place="bottom"
+  style={{ backgroundColor: "#4caf50", color: "white", fontWeight: "500" }}/>
                 </div>
                 <ul
                   tabIndex={0}

@@ -32,7 +32,7 @@ const UpdateTips = () => {
       ...information,
     };
 
-    fetch(`http://localhost:2100/share-tips/${_id}`, {
+    fetch(`https://green-hub-server.vercel.app/share-tips/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

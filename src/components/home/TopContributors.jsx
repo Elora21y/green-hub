@@ -17,7 +17,7 @@ const Stats = () => {
     </h2>
 
     {/* Section Description */}
-    <p className="text-accent max-w-2xl mx-auto mb-12">
+    <p className="text-accent-content max-w-2xl mx-auto mb-12">
       GreenHub is growing every day with amazing gardeners, learners, and nature lovers. Here’s a quick look at how we’re blooming together.
     </p>
 

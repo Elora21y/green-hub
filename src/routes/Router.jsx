@@ -23,22 +23,22 @@ export const router = createBrowserRouter([
             {
                 index : true ,
                 Component : Home,
-                loader : () => fetch('http://localhost:2100/gardeners/active')
+                loader : () => fetch('https://green-hub-server.vercel.app/gardeners/active')
             },
             {
                 path:'/explore-gardeners',
                 Component : ExploreGardeners,
-                loader : () => fetch('http://localhost:2100/gardeners')
+                loader : () => fetch('https://green-hub-server.vercel.app/gardeners')
             },
             {
                 path : '/browser-tips',
                 Component : BrowserTips,
-                loader : () => fetch('http://localhost:2100/share-tips/public')
+                loader : () => fetch('https://green-hub-server.vercel.app/share-tips/public')
             },
             {
                 path : '/tip-details/:id',
                 element : <PrivateRoute><TipDetails/> </PrivateRoute>,
-                loader : ({params}) => fetch(`http://localhost:2100/share-tips/public/${params.id}`)
+                loader : ({params}) => fetch(`https://green-hub-server.vercel.app/share-tips/public/${params.id}`)
             },
             {
                 path : '/share-garden',
@@ -47,12 +47,12 @@ export const router = createBrowserRouter([
             {
                 path : '/my-tips',
                 element : <PrivateRoute><MyTips/></PrivateRoute>,
-                // loader : () => fetch('http://localhost:2100/share-tips')
+                // loader : () => fetch('https://green-hub-server.vercel.app/share-tips')
             },
             {
                 path : '/update-tips/:id',
                 element : <PrivateRoute><UpdateTips/></PrivateRoute>,
-                loader : ({params}) => fetch(`http://localhost:2100/share-tips/${params.id}`)
+                loader : ({params}) => fetch(`https://green-hub-server.vercel.app/share-tips/${params.id}`)
             }
         ]
     },
