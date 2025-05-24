@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router";
 
 const FeaturedGardeners = () => {
   const gardeners = useLoaderData();
-  console.log(gardeners);
+  // console.log(gardeners);
   return (
     <div className="py-10 bg-green-50 my-12 px-6 lg:px-10 text-accent">
      
