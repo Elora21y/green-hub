@@ -2,7 +2,7 @@
 
 ## 🔗 Live Site
 
- [Visit GreenHub Live](https://green-hub-d48ce.web.app)
+ [Visit GreenHub Live](https://green-hub-21ye.netlify.app/)
 
 ## ✨ Features
 
