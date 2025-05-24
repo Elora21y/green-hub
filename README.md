@@ -1,12 +1,28 @@
-# React + Vite
+#  GreenHub 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔗 Live Site
 
-Currently, two official plugins are available:
+ [Visit GreenHub Live](https://green-hub-d48ce.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Share & Explore Tips** – Users can share helpful gardening tips and browse others’ suggestions with categories, skill levels, and more.
+- **Top Trending Tips** – View the most liked tips ranked by popularity.
+- **User Authentication** – Secure login and registration system with Firebase Authentication.
+- **FAQ & Testimonials Sections** – Build trust with a dedicated FAQ section and user testimonials.
+- **Event Slideshow Banner** – Engaging homepage banner with upcoming gardening events using React Slideshow.
+- **Like System with DB Update** – Users can like tips, and the like count updates instantly in the database.
+- **Top Contributors** – Highlight the most active and appreciated members in the community.
+- **Tool Suggestions** – Beginner-friendly tool recommendation section for easy gardening.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📝 Project Description
+
+**GreenHub** is a dynamic gardening community and resource platform built with:
+-  **React**, **React Router**, **Firebase**, **TailwindCSS**, and **DaisyUI** on the frontend.
+-  **Node.js**, **Express.js**, and **MongoDB** on the backend.
+
+The goal is to connect gardening enthusiasts, promote sustainable green practices, and create a space where people can learn from each other and grow their own mini green world — whether on a rooftop, balcony, or backyard.
+
+
