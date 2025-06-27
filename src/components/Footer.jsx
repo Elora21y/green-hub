@@ -33,7 +33,7 @@ const Footer = () => {
 
           <div className="flex flex-col gap-1 links">
             <Link to="/">Home</Link>
-            <Link to="/browser-tips">Browse Tips</Link>
+            <Link to="/browser-tips-page">Browse Tips</Link>
             <Link to="/explore-gardeners">Explore Gardeners</Link>
             {user && <Link to="/dashboard">Dashboard</Link>}
             <Link to="/about-us">About Us</Link>

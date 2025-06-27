@@ -65,11 +65,11 @@ const Register = () => {
     <div className="flex justify-center items-center lg:absolute lg:top-0 lg:right-0 lg:w-11/12 pt-10 md:pt-14  ">
       {/* side text */}
       <div>
-        <h2 className="text-center text-4xl lg:text-5xl font-bold text-secondary-content mb-5">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold text-[#425f57] mb-5">
           Please Sign Up
         </h2>
         <div className="card bg-primary/40 shrink-0 shadow shadow-primary hover:shadow-lg duration-500 transition-shadow">
-          <div className="card-body text-secondary-content w-[300px] sm:w-96 md:w-[400px]">
+          <div className="card-body text-[#425f57] w-[300px] sm:w-96 md:w-[400px]">
             {/* form */}
             <form onSubmit={handleRegister} className="fieldset">
               {/* name */}

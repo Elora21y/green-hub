@@ -2,9 +2,12 @@ import React from "react";
 import { MdLocationOn, MdTipsAndUpdates } from "react-icons/md";
 import { useLoaderData } from "react-router";
 
+import { motion } from "motion/react"
+
 const FeaturedGardeners = () => {
   const gardeners = useLoaderData();
   // console.log(gardeners);
+
   return (
     <div className="py-10 bg-base-200 my-16 px-6 lg:px-10 text-accent-content rounded-xl">
      
@@ -18,9 +21,15 @@ const FeaturedGardeners = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1 }}
+      className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {gardeners.map((gardener) => (
-            <div
+            <div 
+    
               key={gardener._id}
               className=" rounded-2xl shadow-primary/40 hover:shadow-xl transition-all duration-500 hover:scale-103 p-5 text-center  text-sm border border-primary/40 hover:border-primary bg-base-100"
             >
@@ -41,7 +50,7 @@ const FeaturedGardeners = () => {
               </p>
             </div>
           ))}
-        </div>
+        </motion.div>
       
     </div>
   );

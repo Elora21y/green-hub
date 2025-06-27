@@ -1,57 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link, useLoaderData } from "react-router";
 
 const BrowserTips = () => {
-  const data = useLoaderData();
-  const [tips, setTips] = useState(data);
-  // console.log(tips);
-  const [level, setLevel] = useState("");
-
-  const sortedLevel = (level) => {
-    setLevel(level);
-    if (level === "") {
-      setTips(data);
-    } else if (level === "Easy") {
-      setTips(data.filter((tip) => tip.level === level));
-    } else if (level === "Medium") {
-      setTips(data.filter((tip) => tip.level === level));
-    } else if (level === "Hard") {
-      setTips(data.filter((tip) => tip.level === level));
-    }
-  };
+  const tips = useLoaderData();
+  
   return (
     <div>
-      
-      {/* sort */}
-      <div className="flex flex-col justify-center items-end mr-2 mb-10 text-accent-content">
-        <div className="dropdown ">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn m-1 bg-[#23BE0A] text-white hover:text-[#23BE0A] hover:bg-white hover:border-[#23BE0A] "
-          >
-            Sort By{level && `: ${level}`} <IoIosArrowDown size={20} />
-          </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm"
-          >
-            <li>
-              <a onClick={() => sortedLevel("")}>All</a>
-            </li>
-            <li>
-              <a onClick={() => sortedLevel("Easy")}>Easy</a>
-            </li>
-            <li>
-              <a onClick={() => sortedLevel("Medium")}>Medium</a>
-            </li>
-            <li>
-              <a onClick={() => sortedLevel("Hard")}>Hard</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <h2 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-secondary text-center mb-5">
+          All Garden Tip Collection
+        </h2>
 
       <div className="overflow-x-auto overflow-y-hidden ">
         {tips.length > 0 ? (

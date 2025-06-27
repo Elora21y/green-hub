@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react"
 
 const questions = [
   {
@@ -25,7 +26,7 @@ const questions = [
 
 const FAQ = () => {
   return (
-    <div className="bg-base-100 px-3 md:px-4 lg:px-6 pt-8   rounded-lg mt-14 mb-10 hover:shadow-primary/60 hover:shadow-lg transition-all duration-300 text-accent-content">
+    <div id="faq" className="bg-base-100 px-3 md:px-4 lg:px-6 pt-8   rounded-lg mt-14 mb-10 hover:shadow-primary/60 hover:shadow-lg transition-all duration-300 text-accent-content">
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4 ">
           Frequently Asked Questions
@@ -37,7 +38,11 @@ const FAQ = () => {
         </p>
       </div>
       <div className="flex flex-col-reverse lg:flex-row justify-between gap-10 items-center ">
-        <div>
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1 }}>
           
          {
           questions.map(que =>
@@ -54,13 +59,17 @@ const FAQ = () => {
          }
 
          
-        </div>
+        </motion.div>
 
-        <div
+        < motion.div 
+          initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.1 }}
           className=" max-w-[680px] w-full"
         >
         <img src='/about-us.svg' alt="FAQ" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

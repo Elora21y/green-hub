@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FaHeart } from 'react-icons/fa6';
 import { MdArrowOutward } from 'react-icons/md';
 import { Link } from 'react-router';
-
+import { motion } from "motion/react"
 
 const TopTrending = () => {
   const [topTips, setTopTips] = useState([]);
@@ -12,6 +12,11 @@ const TopTrending = () => {
       .then((res) => res.json())
       .then((data) => setTopTips(data));
   }, []);
+  // Animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
     <section className="py-10 px-4 md:px-6 bg-base-200 text-accent-content my-16">
@@ -20,8 +25,13 @@ const TopTrending = () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
-        {topTips.map((tip) => (
-          <div
+        {topTips.map((tip, index) => (
+          <motion.div
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             key={tip._id}
             className="relative rounded-xl overflow-hidden shadow-lg group"
           >
@@ -33,7 +43,9 @@ const TopTrending = () => {
             />
 
             {/* Hover Details */}
-            <div className="absolute bottom-0 left-0 w-full bg-base-100 bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-t-xl">
+            <div
+ 
+            className="absolute bottom-0 left-0 w-full bg-base-100 bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-t-xl">
               <h3 className="text-lg font-semibold text-secondary">{tip.title}</h3>
               <p className="text-sm  mb-1">Tips by- {tip.name}</p>
               <div className="flex justify-between items-center">
@@ -52,7 +64,7 @@ const TopTrending = () => {
               </Link>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

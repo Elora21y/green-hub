@@ -16,6 +16,7 @@ import Error from "../pages/Error";
 import AboutUs from "../pages/AboutUs";
 import DashboardLayout from "../layout/DashboardLayout";
 import DashboardHome from "../dashboard/DashboardHome";
+import BrowserTipsPage from "../pages/BrowserTipsPage";
 
 export const router = createBrowserRouter([
   {
@@ -35,8 +36,8 @@ export const router = createBrowserRouter([
         loader: () => fetch("https://green-hub-server.vercel.app/gardeners"),
       },
       {
-        path: "/browser-tips",
-        Component: BrowserTips,
+        path: "/browser-tips-page",
+        Component: BrowserTipsPage,
         loader: () =>
           fetch("https://green-hub-server.vercel.app/share-tips/public"),
       },

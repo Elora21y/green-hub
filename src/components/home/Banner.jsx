@@ -2,7 +2,8 @@ import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { Typewriter } from "react-simple-typewriter";
-// import { motion } from "motion/react"
+import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const slideImages = [
   {
@@ -10,27 +11,30 @@ const slideImages = [
     caption: "Urban Gardening Workshop",
     description:
       "Learn how to grow vegetables and herbs in small spaces like rooftops and balconies. Ideal for beginners and city dwellers.",
-    button: "Join Workshop",
+    button: "Learn More",
     location: "Dhaka Botanic Center, Banani",
     date: "June 15, 2025 – 10:00 AM to 1:00 PM",
+    links: "/about-us",
   },
   {
     url: "/banner2.jpg",
     caption: "Composting Made Easy",
     description:
       "Discover how to turn kitchen waste into rich compost. Includes live demo, Q&A, and free compost starter kit for all participants.",
-    button: "Register Now",
+    button: "Learn More",
     location: "GreenHub Community Space, Dhanmondi",
     date: "July 2, 2025 – 4:00 PM to 6:00 PM",
+    links: "/browser-tips-page",
   },
   {
     url: "banner3.jpg",
     caption: "Hydroponics at Home",
     description:
       "A hands-on guide to starting your own soil-less garden using hydroponics. Perfect for tech-lovers and space-savers!",
-    button: "Reserve Seat",
+    button: "Register Now",
     location: " Online Zoom Webinar",
     date: "August 5, 2025 – 3:00 PM to 5:30 PM",
+    links: "/auth/register",
   },
 ];
 const Banner = () => {
@@ -60,13 +64,15 @@ const Banner = () => {
               backgroundImage: ` linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.10)) ,url(${slideImage.url})`,
             }}
           >
-            <div initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{once : true}}
-            className=" px-6 sm:px-10 md:px-16 lg:px-24 space-y-2 lg:space-y-4 text-white">
+            <motion.div
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className=" px-6 sm:px-10 md:px-16 lg:px-24 space-y-2 lg:space-y-4 text-white"
+            >
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold drop-shadow-2xl">
-                 <Typewriter
+                <Typewriter
                   words={[slideImage.caption]}
                   loop={3}
                   cursor
@@ -85,10 +91,13 @@ const Banner = () => {
                 </p>
                 <p>at- {slideImage.date}</p>
               </div>
-              <button className="btn bg-primary hover:bg-[#70d66c] text-white border-0">
+              <Link
+                to={slideImage.links}
+                className="btn bg-primary hover:bg-[#70d66c] text-white border-0"
+              >
                 {slideImage.button}
-              </button>
-            </div>
+              </Link>
+            </motion.div>
           </div>
         ))}
       </Slide>

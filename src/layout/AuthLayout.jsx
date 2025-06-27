@@ -9,7 +9,7 @@ const AuthLayout = () => {
     const isNavigation = Boolean(navigation.location)
   return (
     <div className=" bg-white">
-      <header className="sticky backdrop-blur-lg top-0 z-10">
+      <header className="sticky backdrop-blur-lg top-0 z-10 text-[#425f57]">
         <Navbar />
       </header>
       {

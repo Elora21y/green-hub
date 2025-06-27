@@ -10,6 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { Toaster } from "react-hot-toast";
+import { motion } from "motion/react"
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -67,7 +68,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     loading,
     handleToggle,
-    theme
+    theme,
+    motion
   };
   return (
     <div>

@@ -2,6 +2,7 @@ import React from "react";
 import { MdLocationOn, MdTipsAndUpdates } from "react-icons/md";
 import { PiGenderFemaleBold, PiGenderMaleBold } from "react-icons/pi";
 import { useLoaderData } from "react-router";
+import { motion } from "motion/react"
 
 const ExploreGardeners = () => {
   const gardeners = useLoaderData();
@@ -16,7 +17,11 @@ const ExploreGardeners = () => {
           Explore the talented gardeners from across Bangladesh who are growing green dreams in balconies, rooftops, and backyards. Learn from their expertise and discover your inspiration!
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
+        <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 ">
       {gardeners.map((gardener) => (
         <div
           key={gardener._id}
@@ -58,7 +63,7 @@ const ExploreGardeners = () => {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
     </div>
   );
 };
