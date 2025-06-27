@@ -44,7 +44,7 @@ const UpdateTips = () => {
         // console.log(data);
         if (data.modifiedCount) {
           toast.success("Updated Garden Tips successfully");
-          navigate('/my-tips')
+          navigate(-1)
         }
         else{
           toast.error('Update a field')
@@ -53,9 +53,6 @@ const UpdateTips = () => {
   };
   return (
     <div className="text-accent-content">
-      <Link to='/my-tips' className="text-primary ">
-      <FaCircleArrowLeft size={25}/>
-      </Link>
       <div className="text-center mb-5 lg:mb-8">
         <h2 className="text-3xl lg:text-4xl font-bold text-secondary">
           Update Garden Tip
@@ -66,7 +63,7 @@ const UpdateTips = () => {
           experience can help others bloom.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto p-8 bg-primary/40 rounded-2xl shadow-lg ">
+      <div className="max-w-2xl mx-auto p-8 bg-base-100 border border-primary/40 rounded-2xl shadow-lg ">
         <form className="space-y-4 " onSubmit={handleUpdateTips}>
           {/* title */}
           <input

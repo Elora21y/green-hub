@@ -56,24 +56,24 @@ const ShareTips = () => {
           experience can help others bloom.
         </p>
       </div>
-      <div className="max-w-2xl mx-auto p-8 bg-[#a6e291cc] rounded-2xl mt-8 shadow-primary/40 hover:shadow-lg transition-all duration-500">
+      <div className="max-w-2xl mx-auto p-8 bg-base-100 border border-primary/50 rounded-2xl mt-8 shadow-primary/40 hover:shadow-lg transition-all duration-500">
         <form className="space-y-4" onSubmit={handleShareSubmit}>
           {/* title */}
           <input
             type="text"
             placeholder="Title (e.g. How I Grow Tomatoes Indoors)"
-            className=" input input-bordered w-full bg-white"
+            className=" input input-bordered w-full "
             name="title"
           />
           {/* plant name */}
           <input
             type="text"
             placeholder="Plant Type / Topic"
-            className=" input input-bordered w-full bg-white"
+            className=" input input-bordered w-full "
             name="plant"
           />
           {/* level */}
-          <select className="w-full select select-bordered bg-white" name="level">
+          <select className="w-full select select-bordered " name="level">
             <option disabled value="">
               Difficulty Level
             </option>
@@ -83,7 +83,7 @@ const ShareTips = () => {
           </select>
 
           <textarea
-            className="textarea focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b] bg-white placeholder:text-gray-400"
+            className="textarea focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b]  placeholder:text-gray-400"
             rows="4"
             placeholder="Description"
             name="description"
@@ -92,11 +92,11 @@ const ShareTips = () => {
           <input
             type="url"
             placeholder="Image URL"
-            className="w-full input input-bordered bg-white"
+            className="w-full input input-bordered "
             name="photo"
           />
           {/* category */}
-          <select className="w-full select select-bordered bg-white" name="category">
+          <select className="w-full select select-bordered " name="category">
             <option value="" disabled>
               Category
             </option>
@@ -106,7 +106,7 @@ const ShareTips = () => {
             <option>Hydroponics</option>
           </select>
           {/* availability */}
-          <select className="w-full select select-bordered bg-white" name="availability">
+          <select className="w-full select select-bordered " name="availability">
             <option disabled value="">
               Availability
             </option>
@@ -120,14 +120,14 @@ const ShareTips = () => {
               readOnly
               defaultValue={user.displayName}
               name="name"
-              className="focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b] input bg-white"
+              className="focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b] input "
             />
             <input
               type="email"
               readOnly
               defaultValue={user.email}
               name="email"
-              className="input focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b] bg-white"
+              className="input focus:outline-0 w-full placeholder:text-xs focus:border-2 focus:border-[#88d66ce8] focus:shadow-[0_0_5px_4px_#88d66c5b] "
             />
           </div>
 

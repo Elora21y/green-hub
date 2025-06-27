@@ -11,10 +11,12 @@
 ul > li > a:hover {
   background-color: #88d66c;
   color: white;
+   border-radius: 20px;
 }
 ul > li > a.active {
   border: 2px solid #88d66c;
   color: #36ed05;
+  border-radius: 20px;
 }
 ul > li > a.active:hover {
   border: 2px solid #88d66c;

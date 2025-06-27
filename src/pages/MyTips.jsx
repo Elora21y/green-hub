@@ -91,7 +91,7 @@ const MyTips = () => {
                   <div className="flex gap-4 items-center ">
                     
                     {/* //modal */}
-                    <Link to={`/update-tips/${tip._id}`}
+                    <Link to={`update-tips/${tip._id}`}
                       className="text-secondary btn btn-xs border-primary/30 hover:bg-primary hover:text-white"
                     >
                       <CiEdit size={20} />
