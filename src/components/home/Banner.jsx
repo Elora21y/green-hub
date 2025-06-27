@@ -2,6 +2,7 @@ import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { Typewriter } from "react-simple-typewriter";
+// import { motion } from "motion/react"
 
 const slideImages = [
   {
@@ -59,7 +60,11 @@ const Banner = () => {
               backgroundImage: ` linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.10)) ,url(${slideImage.url})`,
             }}
           >
-            <div className=" px-6 sm:px-10 md:px-16 lg:px-24 space-y-2 lg:space-y-4 text-white">
+            <div initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{once : true}}
+            className=" px-6 sm:px-10 md:px-16 lg:px-24 space-y-2 lg:space-y-4 text-white">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold drop-shadow-2xl">
                  <Typewriter
                   words={[slideImage.caption]}

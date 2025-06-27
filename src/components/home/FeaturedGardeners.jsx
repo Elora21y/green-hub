@@ -6,10 +6,10 @@ const FeaturedGardeners = () => {
   const gardeners = useLoaderData();
   // console.log(gardeners);
   return (
-    <div className="py-10 bg-green-50 my-16 px-6 lg:px-10 text-accent rounded-xl">
+    <div className="py-10 bg-base-200 my-16 px-6 lg:px-10 text-accent-content rounded-xl">
      
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-secondary-content">
+          <h2 className="text-3xl lg:text-4xl font-bold ">
              Featured Gardeners
           </h2>
           <p className=" mt-2 max-w-2xl mx-auto">
@@ -18,11 +18,11 @@ const FeaturedGardeners = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {gardeners.map((gardener) => (
             <div
               key={gardener._id}
-              className="bg-white rounded-2xl shadow-primary/40 hover:shadow-xl transition-all duration-500 hover:scale-103 p-5 text-center  text-sm border border-primary/40 hover:border-primary"
+              className=" rounded-2xl shadow-primary/40 hover:shadow-xl transition-all duration-500 hover:scale-103 p-5 text-center  text-sm border border-primary/40 hover:border-primary bg-base-100"
             >
               <img
                 src={gardener.image}

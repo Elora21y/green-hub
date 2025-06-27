@@ -13,6 +13,7 @@ import MyTips from "../pages/MyTips";
 import UpdateTips from "../pages/UpdateTips";
 import Loading from "../components/Loading";
 import Error from "../pages/Error";
+import AboutUs from "../pages/AboutUs";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
                 path : '/browser-tips',
                 Component : BrowserTips,
                 loader : () => fetch('https://green-hub-server.vercel.app/share-tips/public')
+            },
+            {
+                path : '/about-us',
+                Component : AboutUs
             },
             {
                 path : '/tip-details/:id',

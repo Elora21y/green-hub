@@ -8,16 +8,17 @@
   background-color: rgb(8, 197, 8);
 }
 
-ul > li > a {
-  color: #425f57;
-}
 ul > li > a:hover {
   background-color: #88d66c;
   color: white;
 }
 ul > li > a.active {
   border: 2px solid #88d66c;
-  color: #6ab95e;
+  color: #36ed05;
+}
+ul > li > a.active:hover {
+  border: 2px solid #88d66c;
+  color: white;
 }
 
 form > input:focus {

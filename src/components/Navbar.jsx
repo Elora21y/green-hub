@@ -35,48 +35,55 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <NavLink to="/about-us">About Us</NavLink>
+      </li>
     </>
   );
   return (
-    <div className=" bg-white/80 shadow ">
-      <div className=" max-w-7xl mx-auto px-2 sm:px-8 xl:px-0 navbar p-0">
+    <div className=" bg-green-200/50 shadow max-w-[2800px] mx-auto">
+      <div className=" max-w-7xl mx-auto px-2 sm:px-8 xl:px-0 navbar p-0 ">
         <div className="navbar-start">
           <img src={icon} alt="" className="w-8 sm:w-10 md:w-12" />
-          <h3 className="font-bold text-secondary-content text-xl sm:text-2xl md:text-3xl">
+          <h3 className="font-bold text-secondary text-xl sm:text-2xl md:text-3xl">
             Green<span className="text-primary">Hub</span>
           </h3>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-2 ">{links}</ul>
+          <ul className="menu menu-horizontal px-2 text-secondary">{links}</ul>
         </div>
         <div className="navbar-end gap-1 ">
-        
-         
           {user ? (
             <>
               <div className="dropdown">
                 <div tabIndex={0}>
                   <img
-        src={
-          user?.photoURL
-            ? user.photoURL
-            : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
-        }
-        alt="Profile Pic"
-        className="w-12 h-12 rounded-full object-cover cursor-pointer"
-        data-tooltip-id="user-tooltip"
-        data-tooltip-content={`Hi! ${user?.displayName || "Guest"}`}
-        data-tooltip-place="bottom"
-      />
-      <ReactTooltip id="user-tooltip" 
-      place="bottom"
-  style={{ backgroundColor: "#4caf50", color: "white", fontWeight: "500" }}/>
+                    src={
+                      user?.photoURL
+                        ? user.photoURL
+                        : "https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI="
+                    }
+                    alt="Profile"
+                    className="w-12 h-12 rounded-full object-cover cursor-pointer"
+                    data-tooltip-id="user-tooltip"
+                    data-tooltip-content={`Hi! ${user?.displayName || "Guest"}`}
+                    data-tooltip-place="bottom"
+                  />
+                  <ReactTooltip
+                    id="user-tooltip"
+                    place="bottom"
+                    style={{
+                      backgroundColor: "#4caf50",
+                      color: "white",
+                      fontWeight: "500",
+                    }}
+                  />
                 </div>
                 <ul
                   tabIndex={0}
                   className="menu menu-sm  dropdown-content bg-base-100 rounded-box z-1 max-w-54 p-4 shadow-lg right-0 space-y-2 text-center"
                 >
-                  <p className=" text-sm md:text-base">{user.email}</p>
+                  <p className=" text-sm">{user.email}</p>
                   <Link
                     onClick={handleLogout}
                     className="btn btn-xs md:btn-sm button-green "
@@ -90,19 +97,19 @@ const Navbar = () => {
             <>
               <Link
                 to="/auth/login"
-                className="btn btn-xs sm:btn-md hover:text-white hover:bg-primary text-primary border border-primary bg-white "
+                className="btn btn-xs border-2 sm:btn-md hover:text-white hover:bg-primary text-primary border-primary bg-transparent shadow-none"
               >
                 Login
               </Link>
               <Link
                 to="/auth/register"
-                className="btn btn-xs sm:btn-md button-green"
+                className="btn btn-xs sm:btn-md button-green shadow-none"
               >
                 Register
               </Link>
             </>
           )}
-          
+
           <label className="swap swap-rotate -mr-3 ml-2">
             {/* this hidden checkbox controls the state */}
             <input
@@ -136,13 +143,13 @@ const Navbar = () => {
             <div
               tabIndex={0}
               role="button"
-              className="btn btn-ghost btn-sm lg:hidden "
+              className="btn btn-ghost btn-sm lg:hidden hover:bg-transparent hover:border-0"
             >
               <HiOutlineMenuAlt3 size={20} />
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm  dropdown-content bg-base-100 rounded-box z-20 mt-3 w-40 p-2 shadow right-0"
+              className="menu menu-sm  dropdown-content rounded-box z-20 mt-3 w-40 p-2 shadow right-0  bg-base-100"
             >
               {links}
             </ul>

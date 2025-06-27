@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.7",
     "daisyui": "^5.0.35",
     "firebase": "^11.8.0",
+    "motion": "^12.18.1",
     "react": "^19.1.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.1.0",

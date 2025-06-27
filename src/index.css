@@ -12,7 +12,7 @@
   default: true;
   --color-primary: #88d66c;
   --color-secondary: #425f57;
-  --color-secondary-content: #425f57;
+  --color-secondary-content: white;
   --color-accent-content: #5e686d;
   --color-accent: #5e686d;
   --bg-base-200 : #FAF6E9
@@ -21,10 +21,10 @@
      name: "dark";
   default: true;
  --color-primary: #88d66c;
-  --color-secondary: #FFFDF6;
+  --color-secondary: #fffdf6da;
    --color-secondary-content: #425f57;
  --color-accent: #5e686d; 
- --color-accent-content: #FFFDF6; 
+ --color-accent-content: #fffdf6da; 
  --color-bg-base-200 : #FAF6E9
   }
 
