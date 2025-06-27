@@ -52,3 +52,7 @@ div > p > a:hover {
 .social > a:hover {
   color: #88d66c;
 }
+.links > a:hover {
+  color: #88d66c;
+  text-decoration: underline;
+}

@@ -2,6 +2,29 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
+const stats = [
+  {
+    title: 'Community Members',
+    count :1000,
+    mark : '+'
+  },
+  {
+    title: 'Gardening Tips Shared',
+    count :50,
+    mark : '+'
+  },
+  {
+    title: 'Plant Species Featured',
+    count :150,
+    mark : '+'
+  },
+  {
+    title: 'User Satisfaction Rate',
+    count : 95,
+    mark : '%'
+  },
+]
+
 const Stats = () => {
   const { ref, inView } = useInView({
     threshold: 0.2,
@@ -25,34 +48,18 @@ const Stats = () => {
       ref={ref}
       className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 px-2 text-accent text-xl font-semibold"
     >
-      {/* stats 1 */}
-      <div className="bg-white border-2 border-green-100 hover:border-primary p-8 rounded-xl shadow-lg hover:scale-104 duration-500 transition-all">
-        <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
-          {inView && <CountUp end={10000} duration={6} />}+
-        </h3>
-        <p>Community Members</p>
-      </div>
 
-      <div className="bg-white border-2 border-green-100 hover:border-primary p-8 rounded-xl shadow-lg hover:scale-104 duration-500 transition-all">
-        <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
-          {inView && <CountUp end={500} duration={6} />}+
+{
+  stats.map(s => 
+    
+      <div className="bg-green-100 border-primary border-2  hover:border-primary p-8 rounded-xl shadow-lg hover:scale-104 duration-500 transition-all">
+        <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+          {inView && <CountUp end={s.count} duration={6} />}{s.mark}
         </h3>
-        <p>Gardening Tips Shared</p>
+        <p>{s.title} </p>
       </div>
-
-      <div className="bg-white border-2 border-green-100 hover:border-primary p-8 rounded-xl shadow-lg hover:scale-104 duration-500 transition-all">
-        <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
-          {inView && <CountUp end={150} duration={6} />}+
-        </h3>
-        <p>Plant Species Featured</p>
-      </div>
-
-      <div className="bg-white border-2 border-green-100 hover:border-primary p-8 rounded-xl shadow-lg hover:scale-104 duration-500 transition-all">
-        <h3 className="text-4xl md:text-5xl font-bold text-primary mb-2">
-          {inView && <CountUp end={98} duration={6} />}%
-        </h3>
-        <p>User Satisfaction Rate</p>
-      </div>
+  )
+}
     </div>
   </div>
 </div>

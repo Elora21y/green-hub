@@ -39,7 +39,7 @@ const AboutUs = () => {
     <section className=" px-4 md:px-8 text-accent-content">
       <div className="max-w-6xl mx-auto space-y-6 lg:space-y-8 ">
         <div className="relative flex flex-col md:flex-row items-stretch lg:mb-15">
-          <div className="absolute bg-teal-950 py-5 px-6 xl:py-10 rounded-lg w-72 md:w-88 xl:w-96 text-white z-1 text-center -right-5 xl:right-28 bottom-0 lg:bottom-10  hidden md:flex md:flex-col">
+          <div className="absolute bg-green-950 py-5 px-6 xl:py-10 rounded-lg w-72 md:w-88 xl:w-96 text-white z-1 text-center -right-5 xl:right-28 bottom-0 lg:bottom-10  hidden md:flex md:flex-col">
             <h2 className="text-2xl md:text-3xl font-bold text-center  mb-2">
               About GreenHub
             </h2>

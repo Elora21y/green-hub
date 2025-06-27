@@ -35,7 +35,7 @@ const TopTrending = () => {
             {/* Hover Details */}
             <div className="absolute bottom-0 left-0 w-full bg-base-100 bg-opacity-90 translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 rounded-t-xl">
               <h3 className="text-lg font-semibold text-secondary">{tip.title}</h3>
-              <p className="text-sm  mb-1">By- {tip.name}</p>
+              <p className="text-sm  mb-1">Tips by- {tip.name}</p>
               <div className="flex justify-between items-center">
               <div className="flex items-center gap-1 text-sm text-red-600">
                 <FaHeart />

@@ -42,7 +42,7 @@ const Banner = () => {
         transitionDuration={600}
         infinite={true}
         prevArrow={
-          <button className="btn btn-circle btn-xs md:btn-sm bg-[#4C585B50] text-white ml-1">
+          <button className="btn btn-circle btn-xs md:btn-sm bg-[#4C585B50] text-white ml-1 ">
             ❮
           </button>
         }
@@ -55,7 +55,7 @@ const Banner = () => {
         {slideImages.map((slideImage, index) => (
           <div
             key={index}
-            className={`flex justify-start items-center min-h-[500px] bg-center bg-cover bg-no-repeat `}
+            className={`flex justify-start items-center min-h-[400px] lg:min-h-[480px]  bg-center bg-cover bg-no-repeat `}
             style={{
               backgroundImage: ` linear-gradient(to bottom right, rgba(0,0,0,0.5), rgba(0,0,0,0.10)) ,url(${slideImage.url})`,
             }}
@@ -68,12 +68,12 @@ const Banner = () => {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold drop-shadow-2xl">
                  <Typewriter
                   words={[slideImage.caption]}
-                  loop={5}
+                  loop={3}
                   cursor
-                  cursorStyle="_"
+                  cursorStyle={false}
                   typeSpeed={70}
                   deleteSpeed={50}
-                  delaySpeed={1500}
+                  delaySpeed={2000}
                 />
               </h2>
               <p className="text-sm sm:text-base md:text-lg max-w-2xl font-medium">

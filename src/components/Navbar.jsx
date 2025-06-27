@@ -26,26 +26,20 @@ const Navbar = () => {
       <li>
         <NavLink to="/explore-gardeners">Explore Gardeners</NavLink>
       </li>
-      {user && (
-        <>
+      {user && 
+       
           <li>
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
-          {/* <li>
-            <NavLink to="/share-garden">Share a Garden Tips</NavLink>
-          </li>
-          <li>
-            <NavLink to="/my-tips">My Tips</NavLink>
-          </li> */}
-        </>
-      )}
+       
+      }
       <li>
         <NavLink to="/about-us">About Us</NavLink>
       </li>
     </>
   );
   return (
-    <div className=" bg-green-200/50 shadow max-w-[2800px] mx-auto z-10">
+    <div className=" bg-green-200/50 shadow max-w-[2600px] mx-auto z-10">
       <div className=" max-w-7xl mx-auto px-2 sm:px-8 xl:px-0 navbar p-0 ">
         <NavLogo/>
         <div className="navbar-center hidden lg:flex">
